@@ -4,14 +4,14 @@
 \alias{e_trunct}
 \title{Compute moments of univariate truncated t distribution}
 \usage{
-e_trunct(a, b, v, r)
+e_trunct(a, b, df, r)
 }
 \arguments{
 \item{a}{the left end(s) of the truncation interval(s)}
 
 \item{b}{the right end(s) of the truncation interval(s)}
 
-\item{v}{the degrees of freedom of the t distribution}
+\item{df}{the degrees of freedom of the t distribution}
 
 \item{r}{the degree of moment to compute}
 }
@@ -19,15 +19,19 @@ e_trunct(a, b, v, r)
 Compute moments of univariate truncated t distribution
 }
 \details{
-This function computes the $r$th moment of the univariate t distribution on v degrees of freedom,
+This function computes the r-th moment of the univariate t distribution on df degrees of freedom,
 truncated to the interval (a,b). If parameters are vectors then the r[i]th moment is computed for each (a[i],b[i],v[i])
-The methods are based on results in O'Hagan, Biometrika 1973 and work for v>r. Otherwise NaN is returned.
+The methods are based on results in O'Hagan (1973) and work for v>r. Otherwise NaN is returned.
 }
 \examples{
- e_trunct(-3,3,3,2) # second moment of t distribution on 2df truncated to (-3,3)
- e_trunct(-3,3,3,1) # first moment of same, should be 0
+ e_trunct(-3,3,3,2) # second moment of t distribution on 3df truncated to (-3,3)
+ e_trunct(-2,2,4,1) # first moment, should be 0 by symmetry
 
- e_trunct(c(-3,0),c(0,0),4,2) # the function is vectorized
+ e_trunct(c(-3,-2),c(3,2),c(3,4),c(2,1)) # the function is vectorized
 
+
+}
+\references{
+O'Hagan, A. (1973) Bayes estimation of a convex quadratic. \emph{Biometrika}  \strong{60} (3).
 }
 
