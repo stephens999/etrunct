@@ -1,7 +1,7 @@
 # These functions for computing moments of truncated t
 # are based on results in O'Hagan, Biometrika 1973
 
-ibeta = function(x,a,b){ pbeta(x,a,b)*beta(a,b) } #incomplete beta function
+ibeta = function(x,a,b){ stats::pbeta(x,a,b)*stats::beta(a,b) } #incomplete beta function
 
 # function G from O'Hagan
 G = function(r, v, q){
@@ -40,8 +40,8 @@ e_trunct = function(a,b,v,r){
   bb = ifelse(a>0 & b>0, -a, b)
 
   mult^r * ifelse(aa==bb,aa^r,
-         (pt(aa,v,lower.tail=FALSE)*e_trunct_onesided(aa,v,r) -
-              pt(bb,v,lower.tail=FALSE)*e_trunct_onesided(bb,v,r))/(pt(bb,v)-pt(aa,v)))
+         (stats::pt(aa,v,lower.tail=FALSE)*e_trunct_onesided(aa,v,r) -
+              stats::pt(bb,v,lower.tail=FALSE)*e_trunct_onesided(bb,v,r))/(stats::pt(bb,v)-stats::pt(aa,v)))
 }
 
 
