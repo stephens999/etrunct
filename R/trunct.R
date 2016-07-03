@@ -1,7 +1,7 @@
 # These functions for computing moments of truncated t
 # are based on results in O'Hagan, Biometrika 1973
 
-ibeta = function(x,a,b){ stats::pbeta(x,a,b)*stats::beta(a,b) } #incomplete beta function
+ibeta = function(x,a,b){ stats::pbeta(x,a,b)*beta(a,b) } #incomplete beta function
 
 # function G from O'Hagan
 G = function(r, v, q){
