@@ -7,9 +7,9 @@
 e_trunct(a, b, df, r)
 }
 \arguments{
-\item{a}{the left end(s) of the truncation interval(s)}
+\item{a}{the left end of the truncation interval}
 
-\item{b}{the right end(s) of the truncation interval(s)}
+\item{b}{the right end of the truncation interval}
 
 \item{df}{the degrees of freedom of the t distribution}
 
@@ -21,7 +21,7 @@ Compute moments of univariate truncated t distribution
 \details{
 This function computes the r-th moment of the univariate t distribution on df degrees of freedom,
 truncated to the interval (a,b). If parameters are vectors then the r[i]th moment is computed for each (a[i],b[i],v[i])
-The methods are based on results in O'Hagan (1973) and work for v>r. Otherwise NaN is returned.
+The methods are based on results in O'Hagan (1973) and work for df>r. Otherwise NaN is returned.
 }
 \examples{
  e_trunct(-3,3,3,2) # second moment of t distribution on 3df truncated to (-3,3)
