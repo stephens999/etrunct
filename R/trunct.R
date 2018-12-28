@@ -19,7 +19,7 @@ e_trunct_onesided = function(q,v,r){
 
 #' Compute moments of univariate truncated t distribution
 #' @details This function computes the r-th moment of the univariate t distribution on df degrees of freedom,
-#' truncated to the interval (a,b). If parameters are vectors then the r[i]th moment is computed for each (a[i],b[i],v[i])
+#' truncated to the interval (a,b). If parameters are vectors then the r[i]th moment is computed for each (a[i],b[i],df[i])
 #' The methods are based on results in O'Hagan (1973) and work for df>r. Otherwise NaN is returned.
 #' @param a the left end of the truncation interval
 #' @param b the right end of the truncation interval
